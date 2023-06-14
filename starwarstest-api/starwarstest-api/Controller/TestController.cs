@@ -9,7 +9,9 @@ namespace starwarstest_api.Controller
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok("Service is alive and running!");
+            return Ok(new {
+                message = "Service is alive and running!"
+            });
         }
     }
 }

@@ -14,11 +14,21 @@ namespace starwarstest_api
         }
 
         public IConfiguration Configuration { get; }
+        private const string CorsAppOrigin = "CORS_AppOrigin";
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddCors(options =>
+            {
+                options.AddPolicy(CorsAppOrigin,
+                    builder => builder
+                        .AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                );
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -29,9 +39,12 @@ namespace starwarstest_api
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
             app.UseRouting();
+            
+            app.UseCors(CorsAppOrigin); 
+            
             app.UseAuthorization();
+            
 
             app.UseEndpoints(endpoints =>
             {
