@@ -7,7 +7,7 @@ namespace starwarstest_api.Controller
     public class TestController : ControllerBase
     {
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public IActionResult Get()
         {
             return Ok("Service is alive and running!");
         }
