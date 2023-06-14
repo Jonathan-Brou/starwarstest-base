@@ -5,10 +5,11 @@ Base Star Wars API test project
 # Test Requirements
 
 - The API should get data from the swapi Star Wars API: https://swapi.dev/documentation
-    - List all characters from the original three films
-    - Sort the list of characters by Film (ordered by film #) -> Planet (alphabetical) -> Character Name (alphabetical)
-    - The character name is one field in surname - given-name order.
+    - List all characters from the original three films.
+    - Sort the list of characters by Film (ordered by film #) -> Planet (alphabetical) -> Character Name (alphabetical).
+    - The character name is one field in "surname - given-name" order.
 - The front-end UI should display a button to get the character data and display the character data in the UI.
+    - Don't forget to run `npm i` in the project folder to make this work.
     - The UI should only call the API in this repo. The UI should **not** call directly to the Swapi API.
     - Both synchronous and asynchronous calls to the API are acceptable. Async is preferable. The method of async does not matter.
     - (Optional) Allow the user to download a CSV file of the data. If you do this, the CSV should match the displayed data **exactly**.
