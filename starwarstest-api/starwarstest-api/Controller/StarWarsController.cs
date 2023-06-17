@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
 using Domain.Interfaces;
-using System.Threading.Tasks;
 namespace starwarstest_api.controllers{
 
 [ApiController]
