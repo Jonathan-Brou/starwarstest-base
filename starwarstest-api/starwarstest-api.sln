@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{5FB3BD1B-2FA6-4A5F-A1B0-6868526141AE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarwarsApi.Test", "StarwarsApi.Test\StarwarsApi.Test.csproj", "{3A5F3F80-0D97-4281-B1C9-9497C455CB42}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,5 +33,9 @@ Global
 		{5FB3BD1B-2FA6-4A5F-A1B0-6868526141AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5FB3BD1B-2FA6-4A5F-A1B0-6868526141AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5FB3BD1B-2FA6-4A5F-A1B0-6868526141AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A5F3F80-0D97-4281-B1C9-9497C455CB42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A5F3F80-0D97-4281-B1C9-9497C455CB42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A5F3F80-0D97-4281-B1C9-9497C455CB42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A5F3F80-0D97-4281-B1C9-9497C455CB42}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
