@@ -1,16 +1,18 @@
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Configuration;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Hosting;
+
+using Domain.Interfaces;
+using DataAccess.Clients;
+using Services;
+using starwarstest_api.middleware;
 
 namespace starwarstest_api
 {
     public class Startup
     {
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
         }
 
         public IConfiguration Configuration { get; }
@@ -29,6 +31,15 @@ namespace starwarstest_api
                         .AllowAnyHeader()
                 );
             });
+
+            services.AddMemoryCache();
+            services.AddScoped<IStarWarsService, StarWarsService>();
+            services.AddScoped<ISwapapiClient, SwapapiClient>();
+            services.AddHttpClient();
+            services.AddHostedService<LoadingService>();
+            services.AddSingleton<IInitializationService, InitializationService>();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,11 +51,13 @@ namespace starwarstest_api
             }
 
             app.UseRouting();
-            
-            app.UseCors(CorsAppOrigin); 
-            
+            app.UseMiddleware<InitializationMiddleware>();
+
+
+            app.UseCors(CorsAppOrigin);
+
             app.UseAuthorization();
-            
+
 
             app.UseEndpoints(endpoints =>
             {

@@ -6,11 +6,13 @@
       "applicationUrl": "http://localhost:13463"
     }
   },
+ 
   "profiles": {
-    "http": {
+    "starwarstest-api": {
       "commandName": "Project",
-      "dotnetRunMessages": true,
-      "launchBrowser": false,
+      "dotnetRunMessages": "true",
+      "launchBrowser": true,
+      "applicationUrl": "https://localhost:5001;http://localhost:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
