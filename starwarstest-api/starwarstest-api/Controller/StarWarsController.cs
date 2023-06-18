@@ -1,5 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Domain.Interfaces;
+using CsvHelper;
+using System.Globalization;
+using System.Text;
+
 namespace starwarstest_api.controllers{
 
 [ApiController]
@@ -28,5 +32,22 @@ public async Task<IActionResult> GetCharacters()
         return StatusCode(500, "An error occurred while processing your request. Please try again later.");
     }
 }
+
+[HttpGet("originaltrilogycharacters/sorted/download-csv")]
+    public async Task<IActionResult> DownloadCsv()
+    {
+        var characters = await _starWarsService.GetAllAndSortCharactersAsync();
+
+        using var memoryStream = new MemoryStream();
+        using (var writer = new StreamWriter(memoryStream))
+        {
+            var csvWriter = new CsvWriter(writer, CultureInfo.InvariantCulture);
+            csvWriter.WriteRecords(characters);
+        }
+
+        var csvData = Encoding.UTF8.GetString(memoryStream.ToArray());
+
+        return File(new UTF8Encoding().GetBytes(csvData), "text/csv", "characters.csv");
+    }
 }
 }
