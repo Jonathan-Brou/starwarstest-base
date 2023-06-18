@@ -13,7 +13,7 @@ public class StarWarsController : ControllerBase
         _starWarsService = starWarsService;
     }
 
-[HttpGet]
+[HttpGet("test")]
 public async Task<IActionResult> GetCharacters()
 {
     try
