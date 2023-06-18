@@ -7,4 +7,8 @@
         <RootNamespace>starwarstest_api</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="SWapiCSharp" Version="1.2.0" />
+    </ItemGroup>
+
 </Project>
