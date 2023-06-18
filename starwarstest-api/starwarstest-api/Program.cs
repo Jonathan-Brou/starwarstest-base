@@ -18,7 +18,7 @@ namespace starwarstest_api
                     webBuilder.UseStartup<Startup>()
                         .UseContentRoot(Directory.GetCurrentDirectory())
                         .UseIISIntegration()
-                        .UseUrls("http://*:80", "https://*:443")
+                        .UseUrls("http://*:8080", "https://*:443")
                         .UseStartup<Startup>();
                 });
     }

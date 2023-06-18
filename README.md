@@ -1,6 +1,8 @@
 # starwarstest-base
 
-Base Star Wars API test project
+## Submission by Jonathan Simmons
+
+Due to local environment conflicts with projects on my network, I have decided to use the port 8080 instead of default 80.
 
 # Test Requirements
 
