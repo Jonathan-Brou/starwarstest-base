@@ -14,14 +14,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.testApiConnection();
   }
 
-  testApiConnection(){
-    this.httpService.testApiConnection().subscribe(
-      (response) => {
-        console.log(response);
-      }
-    );
-  }
+
 }
